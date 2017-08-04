@@ -15,9 +15,29 @@ namespace ADONET
             PersonMethod();     
         }
 
+        /// <summary>
+        /// Metodo usando una clase "Person" que debe implementar IDisponsable para poder ser
+        /// usada dentro de "using"
+        /// </summary>
         static void PersonMethod()
         {
+            //Mala implementacíón sin usar try-catch
+            //Using evita el .Dispose() ya que, al cerrar el "using(){}" se ejecuta automáticamente el método Dispose()
             using(var person = new Person())
+            {
+
+            }
+
+            //Buena implementación usando try-catch
+            //Para evitar Excepciones hay imposicion de usar try-catch
+            try
+            {
+                using (var person = new Person())
+                {
+
+                }
+            }
+            catch
             {
 
             }

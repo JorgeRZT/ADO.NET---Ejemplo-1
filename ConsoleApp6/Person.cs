@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp6
 {
-    class Person
+    class Person:IDisposable
     {
         public int Id { get; set; }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
